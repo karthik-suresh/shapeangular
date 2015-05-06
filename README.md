@@ -8,3 +8,5 @@ Demo website displaying images and description. User being provided access to ad
 6) Reviews are added statically to each of the product.
 7) When a form is submitted the added review is submitted using 'post' directive and the latest review(as by server) is displayed.
 
+Note:angularpost folder and useless folder are just references.
+
