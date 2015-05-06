@@ -1,0 +1,36 @@
+<h4>Reviews</h4>
+          <div ng-repeat="review in product.reviews">
+          <blockquote>
+            Stars : {{review.stars}}<br>
+            Body : {{review.body}}<br>
+            Email : {{review.email}}<br>
+          </blockquote>
+          </div>  
+         <form name="revForm" novalidate id ="formId">        
+        <strong>
+        <blockquote>
+        Most recent review (From Server)<br>
+           Stars :{{subStars}} <br>
+            Body : {{subBody}}<br>
+            Email : {{subEmail}}<br>
+          </blockquote>
+        </strong>
+              <h4>Submit a Review</h4>
+              <fieldset class="form-group">
+                <select class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" ng-model="preview.Preview.stars" name="stars">
+                  <option value="">Rate the Product</option>
+                </select>
+              </fieldset>
+              <fieldset class="form-group">
+                <textarea class="form-control" placeholder="Write a short review of the product..." title="Review" ng-model="preview.Preview.body" required name="body">
+                </textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="email" name = "email" class="form-control"  title="Email" ng-model="preview.Preview.email"/>
+                <span ng-show="revForm.email.$dirty && revForm.email.$invalid">Email id error</span>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="button" class="btn btn-primary pull-right" value="Submit Review" ng-disabled="!(revForm.body.$dirty && revForm.body.$valid && revForm.email.$dirty && revForm.email.$valid && revForm.stars.$dirty && revForm.stars.$valid)"
+                ng-click="preview.submitFunction(product)"/>     
+              </fieldset>
+            </form>

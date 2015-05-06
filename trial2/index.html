@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="productStore">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/app2.css" />
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/app-form.js"></script>
+  </head>
+  <body class="list-group" ng-controller="StoreController as store">
+   <header>
+      <h1 class="text-center">Market</h1>
+      </header>
+    <div class="list-group-item" ng-repeat="product in store.products" align="center">
+      <h3>
+        {{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+      </h3>
+           <img ng-src="{{product.images}}" />
+        <product-tab>
+        </product-tab>
+        </div>
+  </body>
+</html>
